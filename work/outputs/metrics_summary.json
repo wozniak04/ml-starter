@@ -1,0 +1,10 @@
+{
+  "total_active_pages": 30000,
+  "positive_base_rate": 0.06433333333333334,
+  "precision_at_50_baseline_rule": 0.32,
+  "precision_at_50_honest_rf": 0.68,
+  "precision_at_50_naive_rf": 0.88,
+  "memorization_gap": 0.2,
+  "model_type": "RandomForestClassifier",
+  "split_type": "GroupKFold_by_client_id"
+}
