@@ -124,8 +124,35 @@ All code, notebooks, and dataset processing scripts are version-controlled and f
 - **Validation Audit Notebook:** [`work/notebooks/w06_validation_audit.ipynb`](../work/notebooks/w06_validation_audit.ipynb)
 - **Action Playbook Notebook:** [`work/notebooks/w07_action_playbook.ipynb`](../work/notebooks/w07_action_playbook.ipynb)
 - **Exported Metric Receipts:** [`work/outputs/metrics_summary.json`](../work/outputs/metrics_summary.json)
+
 ---
 
-## 8. Acknowledgments & Data Credit
+## 8. Showcase Presentation Outline & Shareable Cuts
+
+### 🎤 5-Minute Presentation Outline
+1. **Minute 1 (Problem):** How content strategists prioritize existing articles for LLM search citation.
+2. **Minute 2 (Data Trap):** 30,000 pages (6.43% base rate). Why random splits leak client authority, faking an 88% score.
+3. **Minute 3 (Honest Results):** Enforcing `GroupKFold` by `client_id` yields an honest **68.00% Precision@50** (+36.00% lift over the 32% baseline).
+4. **Minute 4 (Drivers & Audit):** Search impressions (34%) and word count (31%) drive scores; leaky features strictly removed.
+5. **Minute 5 (Playbook & No-Go List):** Operationalizing recommendations into reason codes with human-in-the-loop safeguards.
+
+### 📢 Short Social Post (LinkedIn / Twitter)
+> **Why Random Splitting Fails in SEO Machine Learning (and how we fixed it)** 🚀
+>
+> When building ML models on multi-client web data, standard random train-test splits often lie to you. In our latest research on 30,000 pages across 32 enterprise client domains, a random 5-fold split produced a flashy **88% Precision@50** — because the model simply memorized domain authority traits shared across folds.
+>
+> By switching to an honest `GroupKFold` split (isolating client domains completely), we uncovered a **20.00% Memorization Gap**. Our honest Random Forest model achieved **68.00% Precision@50**, beating a rule-based baseline (32.00%) by +36.00% while providing decision-support for AI referral traffic optimization.
+>
+> 💡 *Key takeaway:* Always validate across independent domain entities, not random rows!
+> 📖 Read the full research paper: [https://wozniak04.github.io/portfolio/#/projects/ai-referral-prediction/paper](https://wozniak04.github.io/portfolio/#/projects/ai-referral-prediction/paper)
+
+### 💼 3-Sentence Employer Summary
+1. **What I Built:** Developed an end-to-end Machine Learning decision-support pipeline and Content Action Playbook that prioritizes web pages for AI referral traffic (RAG citations in LLM search engines).
+2. **On What Data:** Evaluated on a 30,000-page production search dataset across 32 client domains (drawn from a 79M+ row panel) with a 6.43% positive base rate.
+3. **What It Showed:** Under an honest client-grouped validation split (`GroupKFold` by `client_id`), the Random Forest model achieved an out-of-fold **Precision@50 of 68.00%** (a 2.125× lift over the 32.00% heuristic baseline), while exposing a 20.00% data leakage gap inherent in standard random train-test splits.
+
+---
+
+## 9. Acknowledgments & Data Credit
 
 Built on the **[FlyRank ML Internship dataset](https://flyrank.ai)**. We gratefully acknowledge FlyRank for providing access to anonymized production search analytics and LLM referral panel data.
